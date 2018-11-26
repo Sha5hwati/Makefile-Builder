@@ -1,12 +1,11 @@
 #!/bin/bash
 
 #Shashwati Shradha
-#usage: ./ShashwatiShradha.wa1 filename
 
 #Making a makefile
 #-------------------------------------------------------------------------
 
-#Count the number of source files
+#Count the number of source files in current directory
 countSource=0
 for eachFile in *.cpp;
 do
@@ -95,7 +94,7 @@ echo -e "\ntar: clean"
 echo "	tar zcvf $mainFound.tgz \$(SOURCE) *.h Makefile"
 
 echo -e "\nhelp:"
-echo "	@echo \"	make gas  - same as make all\"
+echo "	@echo \"	make $mainFound  - same as make all\"
 	@echo \"	make all   - builds the main target\"
 	@echo \"	make       - same as make all\"
 	@echo \"	make clean - remove .o .d core $mainFound\"
