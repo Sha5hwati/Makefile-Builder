@@ -17,7 +17,7 @@ Usage
 * Run the script using the following command -
 
 ```
-sudo chmod +x buildMakefile
+sudo chmod +x buildMakefile.sh
 ./buildMakefile
 ```
 
