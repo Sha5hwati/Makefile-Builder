@@ -2,12 +2,12 @@
 
 #Shashwati Shradha
 
-#Making a makefile
+#Makefile builder
 #-------------------------------------------------------------------------
 
 #Count the number of source files in current directory
 countSource=0
-for eachFile in *.cpp;
+for eachFile in `find . -name '*.cpp'`;
 do
        if [ $eachFile \!= "*.cpp" ] ;
             then countSource=$((countSource + 1))
@@ -47,7 +47,7 @@ if [ $countSource -eq 0 ];
 elif [ $countSource -gt 0 ] ;
   then
    count=0;
-   for eachFile in *.cpp;
+   for eachFile in `find . -name '*.cpp'`;
     do
        if [ $count -eq 0 ] ;
        then echo "SOURCE = $eachFile \\"
@@ -105,9 +105,10 @@ echo "	@echo \"	make $mainFound  - same as make all\"
 echo -e "\n-include \$(SOURCE:.cpp=.d)"
 
 echo -e "\n%.d: %.cpp"
-echo -e "	@set -e; /usr/bin/rm -rf \$@;\$(GCC) -MM \$< \$(CXXFLAGS) > \$@\n\n"
+echo -e "	@set -e; rm -rf \$@;\$(GCC) -MM \$< \$(CXXFLAGS) > \$@\n\n"
 
 } > Makefile
+
 
 
 
