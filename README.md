@@ -1,7 +1,5 @@
 # Makefile-Builder
 
-Aim
----
 To automate the process of building a pure C++ project by creating a Makefile. This application generates the ```Makefile``` for a project. 
 
 Features
